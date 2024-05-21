@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla</title>
+</head>
+<body>
+    <script src="generar.js"></script>
+    <div>
+        <label for="monto">Monto (dinero)</label>
+        <input type="number" name="monto" id="monto" min="1">
+        <br>
+        <label for="n_pagos">Numero de pagos</label>
+        <label for="t_pagos" style="display: inline;"> y tipo de periodo</label>
+        <input type="number" name="n_pagos" id="n_pagos" min="1">
+        <select name="t_pagos" id="t_pagos">
+            <option value="mensual">mensual</option>
+            <option value="bimestral">bimestral</option>
+            <option value="trimestral">trimestral</option>
+            <option value="cuatrimestral">cuatrimestral</option>
+            <option value="semestral">semestral</option>
+            <option value="anual">anual</option>
+        </select>
+        <br>
+        <label for="tasa">tasa de interes anual</label>
+        <input type="number" name="tasa" id="tasa" min="1" max="100">
+        <br>
+        <input type="submit" value="generar" onclick="generar()">
+    </div>
+    <br>
+    <table id="amortizacion" style="border: 1px solid black;">
+        <tr>
+            <th>Pago</th>
+            <th>Renta</th>
+            <th>Intereses</th>
+            <th>Pago despues de intereses</th>
+            <th>Saldo</th>
+        </tr>
+    </table>
+</body>
+</html>
